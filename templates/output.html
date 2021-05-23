@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Prject</title>
+</head>
+<body>
+    <h4>
+      Monitoring idle transactions:
+    </h4>
+    <p>Database and source IP address:</p>
+     <table border="1">
+      <tr>
+        {% for d1 in data1 %}
+        <tr> <td>{{ d1[0] }} </td> <td>{{ d1[1] }} </td> <td>{{ d1[2] }} </td> </tr>
+       {% endfor %}
+    </table>
+     <tr>
+    <p>Query text:</p>
+      <table border="1">
+        <tr>
+       {% for d2 in data2 %}
+       <tr> <td>{{ d2[0] }} </td> <td>{{ d2[1] }} </td></tr>
+      {% endfor %} 
+    </table>
+    <tr>
+     <table border="1">
+    <p>To drop lock just copy that query and insert in psql console:</p>
+    <tr>
+      {% for d in data %}
+      <tr> <td>{{ d[0] }} </td> </tr>
+     {% endfor %}
+</body>
+</html>
