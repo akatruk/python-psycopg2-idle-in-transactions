@@ -1,6 +1,8 @@
-select CONCAT('db name: ',(datname::varchar)) ,
-CONCAT('pid: ',(pid::varchar)),
-CONCAT('source ip: ',(client_addr::varchar)) 
+select 
+-- CONCAT('db name: ',(datname::varchar)) ,
+-- CONCAT('pid: ',(pid::varchar)),
+-- CONCAT('source ip: ',(client_addr::varchar)),
+datname, pid, client_addr, query
 from pg_catalog.pg_stat_activity
 where 1=1
 and backend_start <= NOW() - INTERVAL '10 minutes'

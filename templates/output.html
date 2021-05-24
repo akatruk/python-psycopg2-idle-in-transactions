@@ -8,29 +8,23 @@
 </head>
 <body>
     <h4>
-      Capture idle in transactions querys:
+      Capture "idle in transactions" queries:
     </h4>
-    <p>Database and source IP address:</p>
+    <p>Detail information about active locks:</p>
      <table border="1">
       <tr>
         {% for d1 in data1 %}
-        <tr> <td>{{ d1[0] }} </td> <td>{{ d1[1] }} </td> <td>{{ d1[2] }} </td> </tr>
+        <tr> <td><b>{{ tt1[0] }}</b></td> <td><b>{{ tt1[1] }}</b> </td> <td><b>{{ tt1[2] }}</b> </td> <td><b>{{ tt1[3] }}</b> </td></b>
+        <tr> <td>{{ d1[0] }} </td> <td>{{ d1[1] }} </td> <td>{{ d1[2] }} </td><td>{{ d1[3] }} </td>  </tr>
        {% endfor %}
+      </table>
+      <tr>
+       <table border="1">
+      <p>To drop lock just copy that query and insert in psql console:</p>
+      <tr>
+        {% for d in data2 %}
+        <tr> <td>{{ d[0] }} </td> </tr>
+       {% endfor %}  
     </table>
-     <tr>
-    <p>Query text:</p>
-      <table border="1">
-        <tr>
-       {% for d2 in data2 %}
-       <tr> <td>{{ d2[0] }} </td> <td>{{ d2[1] }} </td></tr>
-      {% endfor %} 
-    </table>
-    <tr>
-     <table border="1">
-    <p>To drop lock just copy that query and insert in psql console:</p>
-    <tr>
-      {% for d in data %}
-      <tr> <td>{{ d[0] }} </td> </tr>
-     {% endfor %}
 </body>
 </html>
