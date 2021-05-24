@@ -1,0 +1,2 @@
+docker build -f idle_in_transactions.docker -t idle_in_transaction4 .
+docker run -d -p 5001:5001 idle_in_transaction4 --name idle
