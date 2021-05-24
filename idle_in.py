@@ -48,4 +48,4 @@ def output():
     return render_template('output.html', tt1=t1, data1=_result, data2=_result1)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=80)
+    app.run(debug=True,host="0.0.0.0", port=80)
