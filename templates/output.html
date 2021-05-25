@@ -13,8 +13,8 @@
     <p>Detail information about active locks:</p>
      <table border="1">
       <tr>
-        {% for d1 in data1 %}
         <tr> <td><b>{{ tt1[0] }}</b></td> <td><b>{{ tt1[1] }}</b> </td> <td><b>{{ tt1[2] }}</b> </td> <td><b>{{ tt1[3] }}</b> </td></b>
+        {% for d1 in data1 %}
         <tr> <td>{{ d1[0] }} </td> <td>{{ d1[1] }} </td> <td>{{ d1[2] }} </td><td>{{ d1[3] }} </td>  </tr>
        {% endfor %}
       </table>
