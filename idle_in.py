@@ -15,18 +15,17 @@ def get_data(srv, login, pwd, dbname, files):
 
     try:
 
-        con = psycopg2.connect(dbname=dbname,user=login, host=srv, password=pwd)
+        con = psycopg2.connect(dbname=dbname, user=login, host=srv, password=pwd)
 
         cur = con.cursor()
         cur.execute(read_file(files))
 
         version = cur.fetchall()
-        return version
+        return version, False
 
     except psycopg2.DatabaseError as e:
 
-        print(f'Error {e}')
-        sys.exit(1)
+        return f'Error {e}', True
 
     finally:
 
@@ -43,9 +42,11 @@ def output():
     _srv = request.form['srv_name']
     _pwd = request.form['passwd']
     _dbname = request.form['dbname']
-    _result = get_data(_srv,_login,_pwd,_dbname, f2)
-    _result1 = get_data(_srv,_login,_pwd,_dbname, f1)
-    return render_template('output.html', tt1=t1, data1=_result, data2=_result1)
+    _result, error = get_data(_srv,_login,_pwd,_dbname, f2)
+    if error:
+        return render_template('output_error.html', data1=_result)
+    else:
+        return render_template('output.html', tt1=t1, data1=_result)
 
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0", port=80)
