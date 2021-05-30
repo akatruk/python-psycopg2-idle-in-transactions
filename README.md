@@ -1,74 +1,34 @@
-# python_postgres
-FIXME:
-TODO:
-# What need to add:
+Utility helps to define highweght locks in database PostgreSQL
+# System requirements:
 
-#### 0 step::
-#### Audit configuration
+- docker 
+- python3.9
 
-- Get information about Postgres server
+# Run in docker:
+```bash
+docker build -f container.dockerfile -t idle_in_transaction .
+docker run -d -p 80:80 idle_in_transaction --name idle --network="host"
+```
 
-#### 1st step::
-#### Server performance analyse
+# Run on localhost:
+```bash
+python3.9 idle_in.py
+```
 
-- idle_in_transaction:
-    When CPU load more that 80% you need check qieries status 
 
-- pg_settings 
+# What it can do:
+All sessions with status
 
-collect::
-(
-    shared_buffer 25%,
-    effective_cash_size 75%,
-    work_mem,
-    autovacuum settings)
+Hightweght locks details
 
-analise settings::
-CPU utilisation,
-RAM utilisation::
-(
-    buffer_analise,
-    hit ration
-)
-CPU utilisation
+  - return hightweght details
 
-- Connections analise (
-all connections grouped by and their count)
+  - return kill pid list for copy-paste
 
-analise connections::
-TODO:idle in transaction
-collect::
-(
-    getting time of execution,
-    CPU utilisation,
-    query,
-    source_ip)
+  - pg_wait query details should be appears if locks exists
 
-- WEB server (
-Flask,
-pip install flusk)
-TODO:html basic
-TODO:css basic
+Idle_in_transaction:
 
-#### 2nd step::
-#### Database analyse
-- database size
-- database analise
-- transactions analise
+  - return indle_in_transaction details
 
-#### 4st step::
-#### Macro analyse
-- pg_stat_statements, pg_stat_analyse (wait type)
-- retrieve longest query
-
-#### 5st step::
-#### Table analyse
-
-- vacuum (critical bloat tables)
-- top size tables
-- top used tables
-- tables toast (alalise datatype inside table)
-
-#### 6th step::
-#### Query analyse
-
+  - return kill pid list for copy-paste

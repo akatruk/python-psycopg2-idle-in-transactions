@@ -6,7 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First Prject</title>
 </head>
+<h1>
+  <style scoped>
+    .greenText {color:green;}
+    </style>
+    <p class="greenText">No any hightweght locks!</p></h1>  
+<h4>
+  Utility helps to define and track problem sessions in PostgreSQL:
+</h4>
+<p>Amount and status all sessions:</p>
+<table border="1">
+  <tr>
+    {% for d4 in data5 %}
+    <tr> <td>{{ d4[0] }}</td><td>{{ d4[1] }}</td></tr>
+   {% endfor %}  
+</table>
 <body>
-      <p>{{ data1 }}</p> 
-</body>
+      <p> </p>
+      <table border="1">
+        <tr>
+          {% for d3 in data4 %}
+          <tr> <td>{{ d3[0] }}</td></tr>
+         {% endfor %}  
+    </table>
+    <p>Detail information about active '<a href="https://wiki.lyrasis.org/display/DSPACE/Idle+In+Transaction+Problem">idle in transactions</a>' sessions:</p>
+    <table border="1">
+      <tr>
+        <tr> <td><b>{{ tt1[0] }}</b></td> <td><b>{{ tt1[1] }}</b> </td> <td><b>{{ tt1[2] }}</b> </td> <td><b>{{ tt1[3] }}</b> </td><td><b>{{ tt1[4] }}</b> </td><td><b>{{ tt1[5] }}</b> </td><td><b>{{ tt1[6] }}</b> </td><td><b>{{ tt1[7] }}</b> </td></b>
+        {% for d1 in data1 %}
+        <tr> <td>{{ d1[0] }} </td> <td>{{ d1[1] }} </td> <td>{{ d1[2] }} </td><td>{{ d1[3] }} </td> <td>{{ d1[4] }} </td> <td>{{ d1[5] }} </td> <td>{{ d1[6] }} </td> <td>{{ d1[7] }} </td>  </tr>
+       {% endfor %}
+      </table>
+      <p>Grab query to PSQL console to kill 'idle in transactions' sessions:</p>
+      <table border="1">
+        <tr>
+          {% for d1 in data2 %}
+          <tr> <td>{{ d1[0] }}</td></tr>
+         {% endfor %}  
 </html>
