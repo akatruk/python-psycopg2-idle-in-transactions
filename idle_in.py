@@ -66,7 +66,7 @@ def output():
         if first_tuple_elements[0] >= 1:
             return render_template('output.html', tt1=t1, tt2=t2, data1=_result, data2=_result1, data3=_result2, data4=_result3, data5=_result4)
         else:
-            return render_template('output_error.html', tt1=t1, tt2=t2, data1=_result, data4=_result3, data5=_result4)
+            return render_template('output_error.html', tt1=t1, tt2=t2, data1=_result, data2=_result1, data3=_result2, data4=_result3, data5=_result4)
 
 
 if __name__ == '__main__':

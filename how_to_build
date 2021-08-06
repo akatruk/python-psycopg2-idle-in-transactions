@@ -1,0 +1,2 @@
+docker build -f container.dockerfile -t idle_in_transaction .
+docker run -d -p 80:80 idle_in_transaction --name idle --network="host"
