@@ -17,5 +17,5 @@ CONCAT((hours::varchar), ' hours') hours,
 CONCAT((minutes::varchar), ' minutes') minutes, datname, pid, wait_event, client_addr, query
 from CTE1 as cte
 where 1=1
-and backend_start <= NOW() - INTERVAL '10 minutes'
+-- and backend_start <= NOW() - INTERVAL '10 minutes'
 and state in ('idle in transaction', 'idle in transaction (aborted)');
