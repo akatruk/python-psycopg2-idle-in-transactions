@@ -29,19 +29,3 @@ Idle_in_transaction:
 
   - return indle_in_transaction details
   - return kill pid list for copy-paste
-
-# data.py:
-Database analise
-
-  - Size
-  - Intensive load
-
-Tables
-
-  - Top 10 size
-  - Top 10 intensive load
-  - Bloat top 10
-  - Toast tables
-
-# query.py:
-Top query to tune
